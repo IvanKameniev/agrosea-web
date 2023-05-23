@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import {useForm} from "react-hook-form";
 import {useState} from "react";
@@ -45,14 +44,12 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <img src="/logo.png" alt="Agrosea Logo" />
-        {/*<Image src="/logo.png" alt="Agrosea Logo" width={380} height={120} />*/}
         <div className={styles.grid}>
           {(!code || !key) &&
           <>
-            <p className={styles.description}>
+            <h3 className={styles.description}>
               Enter trial key
-            </p>
+            </h3>
 
             <form onSubmit={handleSubmit(onSubmit)}>
               <input className={styles.input} placeholder="X X X X X" {...register("code", { required: 'The field is required', validate: handleValidate})} />
