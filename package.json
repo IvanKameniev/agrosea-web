@@ -1,8 +1,11 @@
 {
   "name": "agrosea-web",
   "version": "0.1.0",
+  "homepage": "https://github.com/IvanKameniev/agrosea-web",
   "private": true,
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -16,6 +19,7 @@
   },
   "devDependencies": {
     "eslint": "8.41.0",
-    "eslint-config-next": "13.4.3"
+    "eslint-config-next": "13.4.3",
+    "gh-pages": "^5.0.0"
   }
 }
