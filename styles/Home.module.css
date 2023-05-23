@@ -129,17 +129,18 @@
 }
 
 .button {
+  color: white;
   margin-top: 2rem;
   font-size: 2rem;
   border-width: 2px;
   width:300px;
   border-radius:5px;
+  padding: 0.25rem 0;
 }
 
 .button:hover,
-.button:focus,
-.button:active {
-  color: #cccccc;
+.button:focus {
+  color: #d5d2d2;
   background-color: #333333;
 }
 
