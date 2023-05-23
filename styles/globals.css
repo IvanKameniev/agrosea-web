@@ -11,6 +11,10 @@ a {
   text-decoration: none;
 }
 
+input {
+  display: block;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -20,7 +24,7 @@ a {
     color-scheme: dark;
   }
   body {
-    color: white;
-    background: black;
+    color: black;
+    background: #febe00;
   }
 }
