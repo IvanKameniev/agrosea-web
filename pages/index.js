@@ -45,7 +45,8 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <Image src="/logo.png" alt="Agrosea Logo" width={380} height={120} />
+        <img src="/logo.png" alt="Agrosea Logo" />
+        {/*<Image src="/logo.png" alt="Agrosea Logo" width={380} height={120} />*/}
         <div className={styles.grid}>
           {(!code || !key) &&
           <>
@@ -86,7 +87,6 @@ export default function Home() {
             </button>
           </div>
           }
-          <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
 
         </div>
       </main>
