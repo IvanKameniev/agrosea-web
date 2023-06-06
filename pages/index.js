@@ -30,7 +30,7 @@ export default function Home() {
     if (value?.length !== 5) {
       return 'Must be five digits'
     }
-    if (isNaN(Number(value)) || Number(value) >= magicResetNumber) {
+    if (isNaN(Number(value))) {
       return 'Invalid argument'
     }
   }
