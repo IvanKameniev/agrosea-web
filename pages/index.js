@@ -16,8 +16,12 @@ export default function Home() {
   // const magicResetDec = 1473;
 
   const onSubmit = data => {
-    setCode((magicDeactivateNumber - Number(data.code)) || magicNumber)
-    setKey((magicResetNumber - Number(data.code)) || magicNumber)
+    const code = Number(data.code) >= magicDeactivateNumber ? magicNumber :
+     (magicDeactivateNumber - Number(data.code)).toString().padStart(5,'0')
+    const key = Number(data.code) >= magicResetNumber ? magicNumber :
+     (magicResetNumber - Number(data.code)).toString().padStart(5,'0')
+    setCode(code)
+    setKey(key)
   }
 
   const handleReset = () => {
