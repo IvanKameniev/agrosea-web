@@ -16,12 +16,11 @@ export default function Home() {
   // const magicResetDec = 1473;
 
   const onSubmit = data => {
-    const code = Number(data.code) >= magicDeactivateNumber ? magicNumber :
-     (magicDeactivateNumber - Number(data.code)).toString().padStart(5,'0')
-    const key = Number(data.code) >= magicResetNumber ? magicNumber :
-     (magicResetNumber - Number(data.code)).toString().padStart(5,'0')
-    setCode(code)
-    setKey(key)
+    const code = (magicDeactivateNumber - Number(data.code)) ^ magicNumber
+    const key = (magicResetNumber - Number(data.code)) ^ magicNumber
+
+    setCode(Math.abs(code))
+    setKey(Math.abs(key))
   }
 
   const handleReset = () => {
@@ -56,8 +55,8 @@ export default function Home() {
             </h3>
 
             <form onSubmit={handleSubmit(onSubmit)}>
-              <input className={styles.input} placeholder="X X X X X" {...register("code", { required: 'The field is required', validate: handleValidate})} />
-              {!!errors.code && <span className={styles.error}>{errors.code.message}</span>}
+              <input maxLength={5} className={styles.input} placeholder="X X X X X" {...register("code", { required: 'The field is required', validate: handleValidate})} />
+              {!!errors.code && <div className={styles.error}>{errors.code.message}</div>}
 
               <button className={styles.button} type="submit" >
                 Submit
